@@ -1,0 +1,39 @@
+{
+  "name": "apibase",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ts-node src/index.ts",
+    "seed": "npx ts-node src/data/seed/index.ts",
+    "dev": "npx nodemon --watch src/ --exec npm run start -e ts",
+    "typeorm": "npx ts-node --files ./node_modules/typeorm/cli.js --config ormconfig.ts",
+    "db:migrate": "npm run typeorm migration:run",
+    "db:migrate-undo": "npm run typeorm migration:revert",
+    "db:generate-migration": "npm run typeorm migration:generate -- -n DBChanges"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "nunjucks": "^3.2.3",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.40",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^16.11.7",
+    "@types/nunjucks": "^3.2.0",
+    "chokidar": "^3.5.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}
